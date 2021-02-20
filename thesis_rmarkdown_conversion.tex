@@ -1,0 +1,31 @@
+% Author: Tobias Rieger
+% For licensing and further attributions please see the license file.
+
+\input{template/config}
+
+\begin{document}
+\frontmatter
+\pagenumbering{Roman}
+\include{template/titlepage}
+\include{template/affidavit}
+\include{template/acknowledgement}
+\include{template/abstract}
+\tableofcontents
+% \listoffigures
+\cleardoublepage
+\cfoot*{}
+\ofoot*{\pagemark}
+\mainmatter
+
+% content goes here
+$body$
+% end content
+
+\cfoot*{\pagemark}
+\ofoot*{}
+\backmatter
+\pagenumbering{Roman}
+\nocite{*}
+\bibliography{references/references}
+
+\end{document}

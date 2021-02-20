@@ -1,0 +1,80 @@
+% Author: Tobias Rieger
+% For licensing and further attributions please see the license file.
+
+\documentclass[
+  fontsize=12pt,
+  paper=A4,
+  parskip=half,
+  open=right,
+  bibliography=totoc,
+  twoside]{scrbook}
+
+\usepackage[unicode]{hyperref}
+\usepackage[english]{babel}
+
+% headerlines
+\usepackage[automark]{scrlayer-scrpage}
+\cfoot*{\pagemark}
+\ofoot*{}
+\KOMAoption{headsepline}{.4pt}{}
+\renewcommand{\headfont}{\normalfont\sffamily}
+\addtokomafont{caption}{\footnotesize}
+\addtokomafont{pagenumber}{\sffamily}
+
+% fonts
+\usepackage{helvet}
+\usepackage{times}
+
+% chapter start
+\RedeclareSectionCommand[afterindent=false,beforeskip=0pt]{chapter}
+
+% page margins
+\usepackage[left=3cm,right=2cm,top=2.5cm,bottom=2cm,includeheadfoot]{geometry}
+
+% start chapters on next page not next right page
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\scr@startchapter}{\if@openright\cleardoublepage\else\clearpage\fi}{\newpage}{}{}
+\makeatother
+
+% diverse fixes
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath}
+}{}
+\PassOptionsToPackage{hyphens}{url}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{}
+\usepackage{setspace}
+
+% citation
+\usepackage[round]{natbib}
+\bibliographystyle{plainnat}
+
+% fonts
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\setlength{\emergencystretch}{3em}
+\usepackage{xcolor}
+\usepackage[bottom]{footmisc}
+\usepackage{graphicx}
+
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[]{helvet}
+  \usepackage[]{times}
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[]{Times New Roman}
+  \setsansfont[]{Helvetica Neue}
+  \setmonofont[]{Courier New}
+\fi
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}

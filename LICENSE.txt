@@ -1,0 +1,10 @@
+This template is licensed under a [[https://creativecommons.org/licenses/by-sa/3.0/][Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license]]
+
+Authored by Tobias Rieger.
+It is a distant cousin inspired by the template written by Karl Voit [https://github.com/novoid/LaTeX-KOMA-template].
+The only part that was directly used is the text from the affidavit and its custom command textfield.
+
+Further, some settings were adapted from the r-markdown pandoc conversion template to make this template r-markdown compatible.
+
+In short, you're more than welcome to use, adapt or share this template, as long as you do not remove the authorship and keep the CC SA licence.
+The resulting PDF has absolutely no restrictions.
