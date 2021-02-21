@@ -21,9 +21,10 @@
 \addtokomafont{caption}{\footnotesize}
 \addtokomafont{pagenumber}{\sffamily}
 
-% fonts
-\usepackage{helvet}
-\usepackage{times}
+% make figure and table counter chapter independent and continuous
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
 
 % chapter start
 \RedeclareSectionCommand[afterindent=false,beforeskip=0pt]{chapter}
@@ -46,6 +47,9 @@
 \PassOptionsToPackage{hyphens}{url}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{}
 \usepackage{setspace}
+
+% enable float disabling
+\usepackage{float}
 
 % citation
 \usepackage[round]{natbib}
@@ -77,4 +81,9 @@
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% section numbering depth
 \setcounter{secnumdepth}{5}
+
+% table of contents depth
+\setcounter{tocdepth}{4}
