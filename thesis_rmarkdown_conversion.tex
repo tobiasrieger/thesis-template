@@ -2,6 +2,11 @@
 % For licensing and further attributions please see the license file.
 
 \input{template/config}
+\input{template/tikz_config.tex}
+
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
 
 \begin{document}
 \frontmatter
@@ -27,5 +32,6 @@ $body$
 \pagenumbering{Roman}
 \nocite{*}
 \bibliography{references/references}
+\include{template/appendix}
 
 \end{document}

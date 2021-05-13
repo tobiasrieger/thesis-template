@@ -12,6 +12,12 @@
 \usepackage[unicode]{hyperref}
 \usepackage[english]{babel}
 
+\usepackage[space]{grffile}
+\usepackage{subfig}
+\captionsetup[subfloat]{labelformat=empty}
+
+\usepackage{tabularx}
+
 % headerlines
 \usepackage[automark]{scrlayer-scrpage}
 \cfoot*{\pagemark}
@@ -30,7 +36,8 @@
 \RedeclareSectionCommand[afterindent=false,beforeskip=0pt]{chapter}
 
 % page margins
-\usepackage[left=3cm,right=2cm,top=2.5cm,bottom=2cm,includeheadfoot]{geometry}
+% \usepackage[left=3cm,right=2cm,top=2.5cm,bottom=2cm,includeheadfoot]{geometry}
+\usepackage[left=2cm,right=2cm,top=2.5cm,bottom=2cm,includeheadfoot]{geometry}
 
 % start chapters on next page not next right page
 \usepackage{etoolbox}
@@ -52,7 +59,7 @@
 \usepackage{float}
 
 % citation
-\usepackage[round]{natbib}
+\usepackage[numbers]{natbib}
 \bibliographystyle{plainnat}
 
 % fonts
@@ -86,4 +93,9 @@
 \setcounter{secnumdepth}{5}
 
 % table of contents depth
-\setcounter{tocdepth}{4}
+\setcounter{tocdepth}{3}
+
+% disable footnote reset
+\makeatletter
+  \@removefromreset{footnote}{chapter}
+\makeatother

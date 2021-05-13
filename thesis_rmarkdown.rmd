@@ -11,6 +11,7 @@ output:
     keep_tex: true
     template: thesis_rmarkdown_conversion.tex
     citation_package: natbib
+    highlight: monochrome
 
 bibliography: references/references.bib
 link-citations: true
